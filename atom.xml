@@ -1,0 +1,661 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>FlyFlower</title>
+  <subtitle>Who Are You?</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://www.shiyf.me/"/>
+  <updated>2016-06-02T06:53:48.000Z</updated>
+  <id>http://www.shiyf.me/</id>
+  
+  <author>
+    <name>Some One</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello World</title>
+    <link href="http://www.shiyf.me/2016/06/14/hello-world/"/>
+    <id>http://www.shiyf.me/2016/06/14/hello-world/</id>
+    <published>2016-06-14T06:35:13.714Z</published>
+    <updated>2016-06-02T06:53:48.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;Quick-Start&quot;&gt;&lt;a href=&quot;#Quick-Start&quot; class=&quot;headerlink&quot; title=&quot;Quick Start&quot;&gt;&lt;/a&gt;Quick Start&lt;/h2&gt;&lt;h3 id=&quot;Create-a-new-post&quot;&gt;&lt;a href=&quot;#Create-a-new-post&quot; class=&quot;headerlink&quot; title=&quot;Create a new post&quot;&gt;&lt;/a&gt;Create a new post&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo new &lt;span class=&quot;string&quot;&gt;&quot;My New Post&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/writing.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Writing&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Run-server&quot;&gt;&lt;a href=&quot;#Run-server&quot; class=&quot;headerlink&quot; title=&quot;Run server&quot;&gt;&lt;/a&gt;Run server&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo server&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/server.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Server&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Generate-static-files&quot;&gt;&lt;a href=&quot;#Generate-static-files&quot; class=&quot;headerlink&quot; title=&quot;Generate static files&quot;&gt;&lt;/a&gt;Generate static files&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo generate&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/generating.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Generating&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&quot;Deploy-to-remote-sites&quot;&gt;&lt;a href=&quot;#Deploy-to-remote-sites&quot; class=&quot;headerlink&quot; title=&quot;Deploy to remote sites&quot;&gt;&lt;/a&gt;Deploy to remote sites&lt;/h3&gt;&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;$ hexo deploy&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;More info: &lt;a href=&quot;https://hexo.io/docs/deployment.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Deployment&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>学习</title>
+    <link href="http://www.shiyf.me/2016/06/04/%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://www.shiyf.me/2016/06/04/学习/</id>
+    <published>2016-06-04T10:30:00.000Z</published>
+    <updated>2016-06-04T10:30:09.000Z</updated>
+    
+    <content type="html">&lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xqu7s.com1.z0.glb.clouddn.com/IMG_3230.GIF&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;hr&gt;
+&lt;p&gt;&lt;img src=&quot;http://7xqu7s.com1.z0.glb.clouddn.com/IMG_3230.GIF&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>情说</title>
+    <link href="http://www.shiyf.me/2016/06/04/%E6%83%85%E8%AF%B4/"/>
+    <id>http://www.shiyf.me/2016/06/04/情说/</id>
+    <published>2016-06-04T09:50:00.000Z</published>
+    <updated>2016-06-04T09:51:15.000Z</updated>
+    
+    <content type="html">&lt;p&gt;爱情里最棒的心态就是：我的一切付出都是一场心甘情愿，我对此绝口不提。你若投桃报李，我会十分感激。你若无动于衷，我也不灰心丧气。直到有一天我不愿再这般爱你，那就让我们一别两宽，各生欢喜。&lt;/p&gt;
+&lt;p&gt;不打扰，是我的温柔。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;爱情里最棒的心态就是：我的一切付出都是一场心甘情愿，我对此绝口不提。你若投桃报李，我会十分感激。你若无动于衷，我也不灰心丧气。直到有一天我不愿再这般爱你，那就让我们一别两宽，各生欢喜。&lt;/p&gt;
+&lt;p&gt;不打扰，是我的温柔。&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+      <category term="碎碎念" scheme="http://www.shiyf.me/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>心痛的记忆</title>
+    <link href="http://www.shiyf.me/2016/06/04/%E7%8A%B6%E6%80%81/"/>
+    <id>http://www.shiyf.me/2016/06/04/状态/</id>
+    <published>2016-06-04T05:29:00.000Z</published>
+    <updated>2016-06-04T05:47:04.000Z</updated>
+    
+    <content type="html">&lt;p&gt;最近一段时间所思所感太多，有很多事情发生的太突然，有很多事情发生了很多次只是一直不在意，有很多回忆不想去想起，有很多未来不敢去勾划。&lt;/p&gt;
+&lt;p&gt;时间没有处理好，导致了很多事情做得虎头蛇尾，很多人没有见，很多地方没有去；很多人在思念，却不能去见面；很多人见了面，却不像之前那样可以畅谈。&lt;/p&gt;
+&lt;p&gt;还是有很多放不下，可是又无能无力，很多事情不想去想，可是抑制不住的思念，虽然在同一个屋檐下，感觉像在世界两端。也是是我累了，不想再去讨好，不想再去主动，那就这样吧，就把这些全都放下吧，心里很痛，Maybe是必须经历的一段路路程吧。&lt;/p&gt;
+&lt;p&gt;情歌还是老的好 &lt;a href=&quot;http://music.163.com/#/m/song?id=114741&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;痴心绝对&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近一段时间所思所感太多，有很多事情发生的太突然，有很多事情发生了很多次只是一直不在意，有很多回忆不想去想起，有很多未来不敢去勾划。&lt;/p&gt;
+&lt;p&gt;时间没有处理好，导致了很多事情做得虎头蛇尾，很多人没有见，很多地方没有去；很多人在思念，却不能去见面；很多人见了面，却不像之前
+    
+    </summary>
+    
+    
+      <category term="感想" scheme="http://www.shiyf.me/tags/%E6%84%9F%E6%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>段子</title>
+    <link href="http://www.shiyf.me/2016/03/23/e6-ae-b5-e5-ad-90/"/>
+    <id>http://www.shiyf.me/2016/03/23/e6-ae-b5-e5-ad-90/</id>
+    <published>2016-03-23T19:48:47.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;我今天才知道&lt;br&gt;讨人喜欢的话我也会说那么多&lt;br&gt;厌恶的话题不太好继续下去&lt;br&gt;你喜欢狗还是猫还是兔子呢&lt;br&gt;啊还有人类耍贱的时候也会把想说的话藏在句首&lt;/p&gt;
+&lt;p&gt;我今天才知道&lt;br&gt;喜鹊喝多了可乐会变成乌鸦&lt;br&gt;欢迎光临说了太多次会变成谢谢惠顾&lt;br&gt;你的猫咪太喜欢你会变成兔子&lt;br&gt;啊还有人类害羞的时候就会把想说的话藏在句首&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我今天才知道&lt;br&gt;讨人喜欢的话我也会说那么多&lt;br&gt;厌恶的话题不太好继续下去&lt;br&gt;你喜欢狗还是猫还是兔子呢&lt;br&gt;啊还有人类耍贱的时候也会把想说的话藏在句首&lt;/p&gt;
+&lt;p&gt;我今天才知道&lt;br&gt;喜鹊喝多了可乐会变成乌鸦&lt;br&gt;欢迎光临说了太多次会变成谢谢惠顾&lt;br&gt;你的猫
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无题</title>
+    <link href="http://www.shiyf.me/2016/03/17/e6-97-a0-e9-a2-98/"/>
+    <id>http://www.shiyf.me/2016/03/17/e6-97-a0-e9-a2-98/</id>
+    <published>2016-03-17T19:37:00.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;她走她的阳关大道&lt;/p&gt;
+&lt;p&gt;我走我的独木小桥&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;她走她的阳关大道&lt;/p&gt;
+&lt;p&gt;我走我的独木小桥&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>人生感悟</title>
+    <link href="http://www.shiyf.me/2016/03/16/e4-ba-ba-e7-94-9f-e6-84-9f-e6-82-9f/"/>
+    <id>http://www.shiyf.me/2016/03/16/e4-ba-ba-e7-94-9f-e6-84-9f-e6-82-9f/</id>
+    <published>2016-03-16T20:35:15.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;我觉得是几个方面的问题：&lt;/p&gt;
+&lt;p&gt;1、你为什么喜欢她？&lt;/p&gt;
+&lt;p&gt;因为她活泼、开朗，有同样的喜欢出去玩的爱好。&lt;/p&gt;
+&lt;p&gt;2、你觉得你们两个有希望吗？&lt;/p&gt;
+&lt;p&gt;不好说，首先是年龄问题，就算我同意，父母估计也不会同意。其次，性格问题，她的性格过于开朗，我这个有一点儿小心眼，对很多事情有某一特殊时期的敏感性。最后，我觉得最大的一个问题，还是领导跟她的关系，我觉得这是最大的一个问题。&lt;/p&gt;
+&lt;p&gt;3、那你真正在意的是什么？&lt;/p&gt;
+&lt;p&gt;有可能是一种被重视、被在乎的感觉，感觉在她眼里我只是一个可有可无的存在。&lt;/p&gt;
+&lt;p&gt;4、那你希望接下来的路怎么去走？&lt;/p&gt;
+&lt;p&gt;保持一种工作上的同事关系，因为现在和她同住，所以我觉得也就是一般朋友关系。&lt;/p&gt;
+&lt;p&gt;5、为什么会有这种感觉？&lt;/p&gt;
+&lt;p&gt;最根本的原因还是孤独感太强，时常能感觉到很强烈的孤独感，周末没人约你出去玩，平时没人关系你过得怎么样，很寂寞，有的时候找一个，可以说真心话的人都没有。&lt;/p&gt;
+&lt;p&gt;6、接下来对自己有什么规划？&lt;/p&gt;
+&lt;p&gt;目前还没有具体明确的规划，总的规划就是要赚钱。&lt;/p&gt;
+&lt;p&gt;7、以后你的脑子里还会像今天这样无时无刻的想她吗？&lt;/p&gt;
+&lt;p&gt;其实仔细一想，并没有什么真的是你很在意的，你真在在意的是什么呢？是她的身材？相貌？金钱？人际关系？都不是，你在意的都不是这些。你只是缺乏交流，缺乏一个能和你说话的人，Maybe她的出现刚好让你以为她能弥补这个空缺，然而并不是这样。&lt;/p&gt;
+&lt;p&gt;最重要的问题，她在乎你吗？不在乎。她喜欢你吗？不喜欢。她需要你去照顾吗？不需要。她需要你带她出去玩吗？不需要。你的路还需要你自己去走，你的人生需要你自己去规划，她只是你人生中划过的一颗流星，不会对你的人生产生任何影响。&lt;/p&gt;
+&lt;p&gt;她走她的阳关大道，你走你的独木小桥。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我觉得是几个方面的问题：&lt;/p&gt;
+&lt;p&gt;1、你为什么喜欢她？&lt;/p&gt;
+&lt;p&gt;因为她活泼、开朗，有同样的喜欢出去玩的爱好。&lt;/p&gt;
+&lt;p&gt;2、你觉得你们两个有希望吗？&lt;/p&gt;
+&lt;p&gt;不好说，首先是年龄问题，就算我同意，父母估计也不会同意。其次，性格问题，她的性格过于开朗，我这
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>解密微博红包：架构、防刷、监控和资源调度</title>
+    <link href="http://www.shiyf.me/2016/03/04/e8-a7-a3-e5-af-86-e5-be-ae-e5-8d-9a-e7-ba-a2-e5-8c-85-ef-bc-9a-e6-9e-b6-e6-9e-84-e3-80-81-e9-98-b2-e5-88-b7-e3-80-81-e7-9b-91-e6-8e-a7-e5-92-8c-e8-b5-84-e6-ba-90-e8-b0-83-e5-ba-a6/"/>
+    <id>http://www.shiyf.me/2016/03/04/e8-a7-a3-e5-af-86-e5-be-ae-e5-8d-9a-e7-ba-a2-e5-8c-85-ef-bc-9a-e6-9e-b6-e6-9e-84-e3-80-81-e9-98-b2-e5-88-b7-e3-80-81-e7-9b-91-e6-8e-a7-e5-92-8c-e8-b5-84-e6-ba-90-e8-b0-83-e5-ba-a6/</id>
+    <published>2016-03-04T01:42:43.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;h2 id=&quot;编者按&quot;&gt;&lt;a href=&quot;#编者按&quot; class=&quot;headerlink&quot; title=&quot;编者按&quot;&gt;&lt;/a&gt;编者按&lt;/h2&gt;&lt;p&gt;与传统意义上的红包相比，近两年火起来的“红包”，似乎才是如今春节的一大重头戏。历经上千年时代传承与变迁，春节发红包早已成为历史沉淀的文化习俗，融入了民族的血脉。按照各家公布的数据，除夕全天&lt;strong&gt;微信用户&lt;/strong&gt;红包总发送量达到10.1亿次，摇一摇互动量达到110亿次，红包峰值发送量为8.1亿次/分钟。而&lt;strong&gt;支付宝的红包&lt;/strong&gt;收发总量达到2.4亿次，参与人数达到6.83亿人次，红包总金额40亿元，峰值为8.83亿次/分钟。春晚直播期间讨论春晚的微博达到5191万条，网友互动量达到1.15亿，网友抢微博红包的总次数超过8亿次。&lt;/p&gt;
+&lt;p&gt;为此，InfoQ策划了“春节红包”系列文章，以期为读者剖析各大平台的红包活动背后的技术细节。本文为微博篇。&lt;/p&gt;
+&lt;p&gt;随着互联网的发展，打破了以往传统的发红包，带给了红包全新的玩法。微博红包已经成为用户给粉丝拜年的一种途径，土豪版成为土豪刷存在感的方式。每年的红包大战都是用户的现金盛宴，对于整个系统却是残酷的考验。&lt;/p&gt;
+&lt;p&gt;微博有8亿注册用户，单日活跃用户数1.34亿的社交平台。红包在微博平台上运行，针对所有的微博用户开放，微博所有用户都可参与红包活动。微博红包有如下特点：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;红包价值高、种类多、覆盖用户广，亿级别用户参与。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;半点准时开抢，高并发访问、瞬间峰值高，每分钟带来上亿次的抢红包峰值。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;请求快速响应，更新亿级用户中奖状态及红包状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;单个红包数额大。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;春晚当天红包总价值超过10亿，有1.34亿用户参与，产生了8亿多次的抢红包行为，其中并发量为平时峰值的10倍左右。在服务器数量一定的情况下，如何构建高并发操作、瞬间峰值高的稳定服务？对于团队和架构师都是一个极大的挑战。这时候系统的架构尤为重要！&lt;/p&gt;
+&lt;h2 id=&quot;红包架构&quot;&gt;&lt;a href=&quot;#红包架构&quot; class=&quot;headerlink&quot; title=&quot;红包架构&quot;&gt;&lt;/a&gt;红包架构&lt;/h2&gt;&lt;p&gt;微博红包支持每秒几十万次的操作，应对突发性的热点事件，快速响应，高内聚低耦合的服务成了架构首先要考虑的因素。&lt;/p&gt;
+&lt;p&gt;(点击放大图像)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/201.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/03/3d2eeb4f9a4c4c96a3ad2248126fa3ed.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;微博是社交型应用，红包在用户数据、关系、抢红包等结构上存在着各种各样复杂的依赖，这些依赖相比其它应用来说，调用频率更高，性能要求也更高。&lt;/p&gt;
+&lt;p&gt;如上图所示，有多个应用模块接入红包的服务层，服务层由多个节点组成，每个节点对应相应的功能并且相对独立。代码模块的使用和组织上相对独立，保证主功能的快速和稳定，将附属的新功能分离在独立模块中。其中红色虚线框内为核心的功能模块，是重点需要保护的功能。&lt;/p&gt;
+&lt;p&gt;微博红包提供获取红包属性（红包金额、红包设置、红包状态、获取抽取结果列表、拆包，抽奖等）接口。服务层调用红包SDK相应的API，会根据应用层逻辑需求提供数据和定制化得数据，完成前端完成交互，达到应用层需要展现的效果。&lt;/p&gt;
+&lt;h2 id=&quot;防刷策略&quot;&gt;&lt;a href=&quot;#防刷策略&quot; class=&quot;headerlink&quot; title=&quot;防刷策略&quot;&gt;&lt;/a&gt;防刷策略&lt;/h2&gt;&lt;p&gt;微博红包有别于微信用户发出的红包，微信用户发出的红包是针对自己所认识的朋友或者已存在于微信群的用户；微博红包是针对于微博所有用户的红包，通过分析参与红包的用户数据每年都会产生一些囤积大量账号准备在春晚大发横财的公司和个人。如何防止微博红包被自动注册或者通过转卖账号来领取红包？这成为面对我们需要解决的一大问题。&lt;/p&gt;
+&lt;p&gt;(点击放大图像)&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/202.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/03/52d744ac7dc38fb45403730597f1c497.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;微博通过基于用户在微博上的行为分析，通过登录，发微博，身份验证等方面来进行分析。主要有：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;用户注册：通过用户行为分析来识别机器注册的用户，则注册环节进行拦截。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;用户登录：分析用户登录的行为，通过验证码，身份验证以及手机号验证等措施来提高机器自动登录的门槛。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;账号质量：通过实名认证，微博的动态等方面来计算出用户的质量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;参与红包：红包战场一贯是刷奖账号的获利主战场， 通过用户平时在微博的行为、属性以及实时的登录状态和常用设备来进行分析，判断是否是正常账号来确定是否可以中奖。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;完善的监控&quot;&gt;&lt;a href=&quot;#完善的监控&quot; class=&quot;headerlink&quot; title=&quot;完善的监控&quot;&gt;&lt;/a&gt;完善的监控&lt;/h2&gt;&lt;p&gt;红包系统是一个大而规则复杂的系统，系统越大，依赖的资源越多，也就越容易出现各种各样的问题。为了给提供稳定运行的服务，必须要能时刻知晓各个资源当前的运行状态。并且在系统出现异常之前或者出现异常的时候，对问题进行排查和定位。&lt;/p&gt;
+&lt;p&gt;(点击放大图像)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/03/5d4780108098808bb060e3af6c883700.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/205.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/03/ffbb3a6165e5083b5bc6755a7a9867ed.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/204.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/03/8d371987f5ecb7fbf0629f9d302d16fe.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/206.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/03/099a746cbf4d7e9e80d98a0adbce2327.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;如上图所示，完善的监控系统，为微博红包顺利度过春晚提供了很好的保障。主要涉及的监控如下：&lt;/p&gt;
+&lt;p&gt;1、应用层接口响应时间监控&lt;/p&gt;
+&lt;p&gt;通过实时的分析access log日志，以HTTP code和响应时间维度实时统计出接口的状态和性能，根据占比来查看接口的健康程度。&lt;/p&gt;
+&lt;p&gt;2、服务层各模块性能监控&lt;/p&gt;
+&lt;p&gt;在模块中记录开始时间和结束时间，每次处理完计算出模块的耗时，通过这种方式很好的发现各个模块是否正常。    &lt;/p&gt;
+&lt;p&gt;3、网络层监控&lt;/p&gt;
+&lt;p&gt;微博红包的出口网络是一个单独的app池，出口带宽使用到80%的时候网络稳定性就可能受到影响。通过计算后端服务器输出计算出带宽，以便能够做到及时响应扩容。&lt;/p&gt;
+&lt;p&gt;4、资源层的监控&lt;/p&gt;
+&lt;p&gt;对各种资源的监控，比如Redis、MySQL、MC等资源的连接时间、状态和操作的实时统计分析，快速定位是否存在资源瓶颈。&lt;/p&gt;
+&lt;p&gt;5、服务器的性能监控&lt;/p&gt;
+&lt;p&gt;通过运维监控系统，对服务器的CPU、内存使用情况，做到了能够观察每台服务器具体的运行情况。&lt;/p&gt;
+&lt;p&gt;6、系统错误日志的监控&lt;/p&gt;
+&lt;p&gt;系统错误监控包括服务器负载，服务进程状态，资源连接，网络连接出现的问题，实时通过手机，邮件和私信知道。为快速响应创造了条件。&lt;/p&gt;
+&lt;h2 id=&quot;弹性资源管理和调度&quot;&gt;&lt;a href=&quot;#弹性资源管理和调度&quot; class=&quot;headerlink&quot; title=&quot;弹性资源管理和调度&quot;&gt;&lt;/a&gt;弹性资源管理和调度&lt;/h2&gt;&lt;p&gt;1、故障的秒级切换&lt;/p&gt;
+&lt;p&gt;微博红包服务部署在了三个机房（包括云服务），任何一个机房如果出现网络或者其它不可预测的问题可以在几秒钟之内将服务切换到其它机房。&lt;/p&gt;
+&lt;p&gt;2、资源的相互独立&lt;/p&gt;
+&lt;p&gt;资源的相互独立，让资源的可扩展性变得容易。而且使得各个服务之间交叉影响达到了最小。&lt;/p&gt;
+&lt;p&gt;3、引入阿里云做为第三机房，使用Docker快速部署服务&lt;/p&gt;
+&lt;p&gt;红包的核心服务主要分布在 2 个机房，两者互相做为灾难备份用途，为应对超预期的峰值，引入阿里云做为第三机房。使用定制化的红包Docker快速部署服务来实现弹性调度架构。通过Docker自动化操作大规模集群，进行弹性调度资源的任务，实现快速部署服务来应付超预期的峰值。&lt;/p&gt;
+&lt;h2 id=&quot;系统的挑战和性能优化&quot;&gt;&lt;a href=&quot;#系统的挑战和性能优化&quot; class=&quot;headerlink&quot; title=&quot;系统的挑战和性能优化&quot;&gt;&lt;/a&gt;系统的挑战和性能优化&lt;/h2&gt;&lt;p&gt;为了保证用户体验，微博红包需要解决以下几个问题：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;系统性能的可靠性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;关键节点的可用性&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;如何应对突发热点&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;业务频繁迭代的处理&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;1、系统架构的升级&lt;/p&gt;
+&lt;p&gt;模块的独立化，避免出现模块间的相互影响。&lt;/p&gt;
+&lt;p&gt;nginx+lua的使用，使得服务器的QPS有了数量级的提升，同时服务器集群做到了秒级重启。&lt;/p&gt;
+&lt;p&gt;2、修枝剪页&lt;/p&gt;
+&lt;p&gt;减少对于系统外部的依赖，梳理完整的调用关系图。非核心功能使用异步调用，合并相关的调用，去掉重复的调用。保证核心调用逻辑，避免非核心业务影响核心业务。&lt;/p&gt;
+&lt;p&gt;3、多级缓存&lt;/p&gt;
+&lt;p&gt;服务端本地缓存，使用nginx本身缓存和服务器的L0缓存，来提升模块的响应速度，做到了90%以上核心接口的响应时间在50ms以内，减少了进程等待时间，提升了服务器的处理速度。&lt;/p&gt;
+&lt;p&gt;一年一度的各大平台抢红包还会延续下去，这是一个斗智斗勇的过程，在服务器有限的情况下每一次与峰值的对抗都是对技术一次极大的挑战，每次挑战都是带来技术上的成长和收获。&lt;/p&gt;
+&lt;p&gt;感谢&lt;a href=&quot;http://www.infoq.com/cn/author/%E9%83%AD%E8%95%BE&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;郭蕾&lt;/a&gt;对本文的策划和审校。&lt;/p&gt;
+&lt;p&gt;给InfoQ中文站投稿或者参与内容翻译工作，请邮件至&lt;a href=&quot;#&quot;&gt;editors@cn.infoq.com&lt;/a&gt;。也欢迎大家通过新浪微博（&lt;a href=&quot;http://www.weibo.com/infoqchina&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@InfoQ&lt;/a&gt;，&lt;a href=&quot;http://weibo.com/u/1451714913&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@丁晓昀&lt;/a&gt;），微信（微信号：&lt;a href=&quot;http://weixin.sogou.com/gzh?openid=oIWsFt0HnZ93MfLi3pW2ggVJFRxY&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;InfoQChina&lt;/a&gt;）关注我们。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;**【[QCon北京2016](http://2016.qconbeijing.com/?utm_source=article&amp;amp;amp;utm_medium=infoq&amp;amp;amp;utm_campaign=textads)】《七周七并发模型》作者Paul Butcher、Dojo Toolkit联合发起人Dylan Schiemann、高盛技术部VP林文、峰瑞资本技术合伙人覃超、LinkedIn Java性能优化专家庄振运、Rust贡献者庄晓立等专家将聚首QCon，分享最佳技术实践，[更多精彩](http://2016.qconbeijing.com/speakers?utm_source=article&amp;amp;amp;utm_medium=infoq&amp;amp;amp;utm_campaign=textads)。现在[购票](http://2016.qconbeijing.com/apply?utm_source=article&amp;amp;amp;utm_medium=infoq&amp;amp;amp;utm_campaign=textads)立减680，5人之上团购优惠多多。**
+&lt;/code&gt;&lt;/pre&gt;&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/articles/null&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;span&gt;领域&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/architecture-design&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;架构 &amp;amp; 设计&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/development&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;strong&gt;语言 &amp;amp; 开发&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/articles/null&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;span&gt;专栏&lt;/span&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/weibo&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微博&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/gaobing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;高并发&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/cloud-service&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;云服务&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/operation&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;运维&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.infoq.com/cn/Hongbao&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;春节红包&lt;/a&gt;                            &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;相关内容&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/cn/articles/large-scale-docker-cluster-practise-experience-share?utm_source=infoq&amp;amp;utm_medium=related_content_link&amp;amp;utm_campaign=relatedContent_articles_clk&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微博红包：大规模Docker集群实践经验分享&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/cn/interviews/interview-with-liqingfeng-talk-sina-weibo-service?utm_source=infoq&amp;amp;utm_medium=related_content_link&amp;amp;utm_campaign=relatedContent_articles_clk&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;李庆丰：新浪微博服务高可用新技术、新架构的尝试&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/cn/articles/evolution-of-micro-blog-recommendation?utm_source=infoq&amp;amp;utm_medium=related_content_link&amp;amp;utm_campaign=relatedContent_articles_clk&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微博推荐架构的演进&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/cn/articles/the-algorithm-behind-weibo?utm_source=infoq&amp;amp;utm_medium=related_content_link&amp;amp;utm_campaign=relatedContent_articles_clk&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微博背后的那些算法&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/cn/presentations/typical-problems-of-weibo-in-large-scale-high-load-system?utm_source=infoq&amp;amp;utm_medium=related_content_link&amp;amp;utm_campaign=relatedContent_articles_clk&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;微博在大规模、高负载系统中的典型问题&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;相关厂商内容&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/infoq/url.action?i=9312&amp;amp;t=f&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;br&gt;                                        网易视频云的数据传输架构
+                                    &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/infoq/url.action?i=9313&amp;amp;t=f&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;br&gt;                                        大数据和人工智能在P2P金融的应用
+                                    &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;###&lt;br&gt;                                    &lt;a href=&quot;http://www.infoq.com/infoq/url.action?i=9314&amp;amp;t=f&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;&lt;br&gt;                                        知名互联网公司管理方法之Facebook
+                                    &lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;相关赞助商&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[
+
+](http://www.infoq.com/infoq/url.action?i=8994&amp;amp;amp;t=f)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;span&gt;QCon北京2016大会，4月21-23日，北京·国际会议中心，&lt;a href=&quot;http://www.infoq.com/infoq/url.action?i=8993&amp;amp;t=f&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;精彩内容&lt;/a&gt;邀您参与！&lt;/span&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&quot;告诉我们您的想法&quot;&gt;&lt;a href=&quot;#告诉我们您的想法&quot; class=&quot;headerlink&quot; title=&quot;告诉我们您的想法&quot;&gt;&lt;/a&gt;告诉我们您的想法&lt;/h3&gt;&lt;pre&gt;&lt;code&gt;社区评论 
+        &amp;lt;span&amp;gt;
+            &amp;lt;a href=&amp;quot;#&amp;quot;&amp;gt;Watch Thread](http://www.infoq.com/cn/articles/null)
+        &amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;编者按&quot;&gt;&lt;a href=&quot;#编者按&quot; class=&quot;headerlink&quot; title=&quot;编者按&quot;&gt;&lt;/a&gt;编者按&lt;/h2&gt;&lt;p&gt;与传统意义上的红包相比，近两年火起来的“红包”，似乎才是如今春节的一大重头戏。历经上千年时代传承与变迁，春节发红包早已成为历史沉淀的
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+    
+      <category term="架构,Posts,微博,红包,资源调度,监控" scheme="http://www.shiyf.me/tags/%E6%9E%B6%E6%9E%84-Posts-%E5%BE%AE%E5%8D%9A-%E7%BA%A2%E5%8C%85-%E8%B5%84%E6%BA%90%E8%B0%83%E5%BA%A6-%E7%9B%91%E6%8E%A7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>烦恼</title>
+    <link href="http://www.shiyf.me/2016/02/28/e7-83-a6-e6-81-bc/"/>
+    <id>http://www.shiyf.me/2016/02/28/e7-83-a6-e6-81-bc/</id>
+    <published>2016-02-28T10:29:03.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;烦恼的来源还是在你无所事事的时候，胡思乱想，感觉这里不对，那里不好，无端平增烦恼丝，所以，要让自己忙起来&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3218.png&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3218.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3219.png&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3219.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3220.png&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3220.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3217.png&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3217.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&amp;nbsp;&amp;nbsp;&lt;br&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3216.png&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3216.png&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;烦恼的来源还是在你无所事事的时候，胡思乱想，感觉这里不对，那里不好，无端平增烦恼丝，所以，要让自己忙起来&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3218.png&quot;&gt;&lt;
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>无感</title>
+    <link href="http://www.shiyf.me/2016/02/12/e6-97-a0-e6-84-9f/"/>
+    <id>http://www.shiyf.me/2016/02/12/e6-97-a0-e6-84-9f/</id>
+    <published>2016-02-12T18:15:41.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;拖延症害死人&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3156.jpg&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3156.jpg&quot; alt=&quot;&quot;&gt;&lt;/a&gt;&amp;nbsp;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;拖延症害死人&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2016/02/img_3156.jpg&quot;&gt;&lt;img src=&quot;http://www.shiyf.me/wp-content/upload
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>#NoLikesNeeded–In Which We Talk Screen Time</title>
+    <link href="http://www.shiyf.me/2016/01/31/nolikesneeded-in-which-we-talk-screen-time/"/>
+    <id>http://www.shiyf.me/2016/01/31/nolikesneeded-in-which-we-talk-screen-time/</id>
+    <published>2016-01-31T15:26:03.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Dear Lily June, Your dad and I have old phones. Like, really old phones. How old are they? Dinosaurs used them for selfies, but couldn’t find the as-yet-uninvented anti-asteroid filter, so they died. Cave men painted our cell phones on walls. The stones of Easter Island aren’t as hardy–or as old–as the bricks your dad […]&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://dearlilyjune.wordpress.com/2016/01/28/nolikesneeded-in-which-we-talk-screen-time/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://dearlilyjune.wordpress.com/2016/01/28/nolikesneeded-in-which-we-talk-screen-time/&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Dear Lily June, Your dad and I have old phones. Like, really old phones. How old are they? Dinosaurs used them for selfies, but couldn’t 
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+    
+      <category term="#NoLikesNeeded" scheme="http://www.shiyf.me/tags/NoLikesNeeded/"/>
+    
+      <category term="cell phone" scheme="http://www.shiyf.me/tags/cell-phone/"/>
+    
+      <category term="cell phones" scheme="http://www.shiyf.me/tags/cell-phones/"/>
+    
+      <category term="selfie" scheme="http://www.shiyf.me/tags/selfie/"/>
+    
+      <category term="selfie stick" scheme="http://www.shiyf.me/tags/selfie-stick/"/>
+    
+      <category term="selfies" scheme="http://www.shiyf.me/tags/selfies/"/>
+    
+      <category term="technology" scheme="http://www.shiyf.me/tags/technology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS 设置开机启动</title>
+    <link href="http://www.shiyf.me/2015/12/11/centos-e8-ae-be-e7-bd-ae-e5-bc-80-e6-9c-ba-e5-90-af-e5-8a-a8/"/>
+    <id>http://www.shiyf.me/2015/12/11/centos-e8-ae-be-e7-bd-ae-e5-bc-80-e6-9c-ba-e5-90-af-e5-8a-a8/</id>
+    <published>2015-12-11T13:28:25.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;如果在&lt;pre&gt;/etc/init.d/&lt;/pre&gt;目录中存在脚本，则可以使用以下命令:&lt;/p&gt;
+&lt;pre&gt;
+chkconfig --add iptables
+chkconfig iptables on
+&lt;/pre&gt;
+查看状态
+&lt;pre&gt;
+chkconfig --list iptables
+&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;如果在&lt;pre&gt;/etc/init.d/&lt;/pre&gt;目录中存在脚本，则可以使用以下命令:&lt;/p&gt;
+&lt;pre&gt;
+chkconfig --add iptables
+chkconfig iptables on
+&lt;/pre&gt;
+查看状态
+&lt;pre&gt;
+chkconfig --list 
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Single cycle Shine</title>
+    <link href="http://www.shiyf.me/2015/12/09/single-cycle-shine/"/>
+    <id>http://www.shiyf.me/2015/12/09/single-cycle-shine/</id>
+    <published>2015-12-09T22:53:43.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&amp;nbsp;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2015/12/IMG_2844-0.jpg&quot; alt=&quot;Shine&quot;&gt;&amp;nbsp;&lt;br&gt;[iframe frameborder=”no” border=”0” marginwidth=”0” marginheight=”0” width=330 height=86 src=”&lt;a href=&quot;http://music.163.com/outchain/player?type=2&amp;amp;id=28798439&amp;amp;auto=0&amp;amp;height=66&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://music.163.com/outchain/player?type=2&amp;amp;id=28798439&amp;amp;auto=0&amp;amp;height=66&lt;/a&gt;“]&lt;br&gt;&lt;a href=&quot;http://music.163.com/song/28798439/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;分享Felix Jaehn/Feddy Verano/Linying的单曲《Shine 》http://music.163.com/song/28798439/ (@网易云音乐)&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&amp;nbsp;&lt;img src=&quot;http://www.shiyf.me/wp-content/uploads/2015/12/IMG_2844-0.jpg&quot; alt=&quot;Shine&quot;&gt;&amp;nbsp;&lt;br&gt;[iframe frameborder=”no” border=”0” 
+    
+    </summary>
+    
+      <category term="Music" scheme="http://www.shiyf.me/categories/Music/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>CentOS6 Install Haproxy</title>
+    <link href="http://www.shiyf.me/2015/12/09/centos6-install-haproxy/"/>
+    <id>http://www.shiyf.me/2015/12/09/centos6-install-haproxy/</id>
+    <published>2015-12-09T16:39:54.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;Download link&lt;/p&gt;
+&lt;pre&gt;
+http://www.haproxy.org/download/1.5/src/haproxy-1.5.14.tar.gz
+&lt;/pre&gt;
+&lt;pre&gt;yum install gcc gcc-c++&lt;/pre&gt;
+进入Haproxy目录，执行:
+&lt;pre&gt;
+make TARGET=linux26 PREFIX=/usr/local/haproxy
+make install PREFIX=/usr/local/haproxy
+&lt;/pre&gt;</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Download link&lt;/p&gt;
+&lt;pre&gt;
+http://www.haproxy.org/download/1.5/src/haproxy-1.5.14.tar.gz
+&lt;/pre&gt;
+&lt;pre&gt;yum install gcc gcc-c++&lt;/pre&gt;
+进入Haproxy
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu Set Static IP</title>
+    <link href="http://www.shiyf.me/2015/12/09/ubuntu-set-static-ip/"/>
+    <id>http://www.shiyf.me/2015/12/09/ubuntu-set-static-ip/</id>
+    <published>2015-12-09T15:03:34.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;pre&gt;&lt;br&gt;vim /etc/network/interfaces&lt;br&gt;&lt;/pre&gt;&lt;br&gt;输入IP地址和默认网关&lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;&lt;br&gt;iface eth0 inet static&lt;br&gt;    address 198.51.100.5/24&lt;br&gt;    gateway 198.51.100.1&lt;br&gt;&lt;/pre&gt;&lt;br&gt;在Linode的管理界面，编辑实例，Auto-Configure Netwroking 选择Yes.&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;pre&gt;&lt;br&gt;vim /etc/network/interfaces&lt;br&gt;&lt;/pre&gt;&lt;br&gt;输入IP地址和默认网关&lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;&lt;br&gt;iface eth0 inet static&lt;br&gt;    address 198.51.100.5/24&lt;br&gt;  
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Redis Command(Keep Update)</title>
+    <link href="http://www.shiyf.me/2015/12/04/redis-commandkeep-update/"/>
+    <id>http://www.shiyf.me/2015/12/04/redis-commandkeep-update/</id>
+    <published>2015-12-04T11:36:57.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;批量删除key&lt;br&gt;eval “redis.call(‘del’, unpack(redis.call(‘keys’,’test*’)))” 0&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;批量删除key&lt;br&gt;eval “redis.call(‘del’, unpack(redis.call(‘keys’,’test*’)))” 0&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Kali Install Redis</title>
+    <link href="http://www.shiyf.me/2015/12/04/kali-install-redis/"/>
+    <id>http://www.shiyf.me/2015/12/04/kali-install-redis/</id>
+    <published>2015-12-04T11:34:47.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1、&lt;pre&gt;apt-get update&lt;br&gt;apt-get install build-essential&lt;br&gt;apt-get install tcl8.5&lt;/pre&gt;&lt;br&gt;2、官网下载tar文件&lt;br&gt;3、解压缩，进入解压后的目录&lt;br&gt;4、依次执行下列命令&lt;/p&gt;
+&lt;p&gt;&lt;pre&gt;&lt;br&gt;make&lt;br&gt;make test&lt;br&gt;make install&lt;br&gt;cd utils&lt;br&gt;./install_server.sh&lt;br&gt;&lt;/pre&gt;&lt;br&gt;安装过程中会选择Redis配置的目录&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1、&lt;pre&gt;apt-get update&lt;br&gt;apt-get install build-essential&lt;br&gt;apt-get install tcl8.5&lt;/pre&gt;&lt;br&gt;2、官网下载tar文件&lt;br&gt;3、解压缩，进入解压后的目录&lt;br&gt;4、依次执行下列命令&lt;/
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Ubuntu Install GitLab</title>
+    <link href="http://www.shiyf.me/2015/12/02/ubuntu-install-gitlab/"/>
+    <id>http://www.shiyf.me/2015/12/02/ubuntu-install-gitlab/</id>
+    <published>2015-12-02T13:21:20.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;按照官方指导进行安装&lt;br&gt;1、先确定是64Bit Ubuntu 14.04(自己是在这个环境测试的，官方推荐Ubuntu版本)&lt;br&gt;2、&lt;pre&gt;apt-get update&lt;/pre&gt;&lt;br&gt;3、&lt;pre&gt;apt-get install curl openssh-server ca-certificates&lt;/pre&gt;&lt;br&gt;如果没有SMTP服务器，需在本机搭建安装，install postfix&lt;br&gt;4、&lt;pre&gt;curl &lt;a href=&quot;https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh&lt;/a&gt; | sudo bash&lt;br&gt;sudo apt-get install gitlab-ce&lt;/pre&gt;&lt;br&gt;文件有点儿大，如果网络不好，耐心等待&lt;br&gt;5、安装完成之后&lt;pre&gt;gitlab-ctl reconfigure&lt;/pre&gt;&lt;br&gt;6、官方的说法是安装完成之后可以直接访问，但是如果之前已经有站点部署，需要修改配置文件，一般在/opt/var/gitlab/nginx，修改gitlab-http.conf&lt;br&gt;7、执行gitlab-ctl reconfigure&lt;br&gt;默认用户名:root&lt;br&gt;默认密码:5iveL!fe &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;按照官方指导进行安装&lt;br&gt;1、先确定是64Bit Ubuntu 14.04(自己是在这个环境测试的，官方推荐Ubuntu版本)&lt;br&gt;2、&lt;pre&gt;apt-get update&lt;/pre&gt;&lt;br&gt;3、&lt;pre&gt;apt-get install curl openssh-se
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL set character utf8</title>
+    <link href="http://www.shiyf.me/2015/12/01/mysql-set-character-utf8/"/>
+    <id>http://www.shiyf.me/2015/12/01/mysql-set-character-utf8/</id>
+    <published>2015-12-01T17:45:29.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;修改MySQL 配置文件my.cnf&lt;br&gt;1、在[client]字段里加入&lt;br&gt;default-character-set=utf8&lt;br&gt;2、在[mysqld]里加入&lt;br&gt;character-set-server=utf8&lt;br&gt;3、在[mysql]里加入&lt;br&gt;default-character-set=utf8&lt;/p&gt;
+&lt;p&gt;重启MySQL服务&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;修改MySQL 配置文件my.cnf&lt;br&gt;1、在[client]字段里加入&lt;br&gt;default-character-set=utf8&lt;br&gt;2、在[mysqld]里加入&lt;br&gt;character-set-server=utf8&lt;br&gt;3、在[mysql]里加入&lt;br&gt;d
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Logstash conf usage</title>
+    <link href="http://www.shiyf.me/2015/12/01/logstash-conf-usage/"/>
+    <id>http://www.shiyf.me/2015/12/01/logstash-conf-usage/</id>
+    <published>2015-12-01T11:08:38.000Z</published>
+    <updated>2016-06-02T07:02:44.000Z</updated>
+    
+    <content type="html">&lt;p&gt;1、收集IIS日志&lt;br&gt;Windows端使用nxlog，配置文件下载查看&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2015/12/nxlog.conf_.txt&quot;&gt;nxlog.conf_IIS&lt;/a&gt;&lt;br&gt;2、配置Logstash接收和过滤&lt;br&gt;Centos Logstash For IIS&lt;br&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2015/12/qtiis.conf_.txt&quot;&gt;iis.conf&lt;/a&gt;&lt;br&gt;Centos Logstash For Windows Event&lt;br&gt;&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2015/12/qtevent.conf_.txt&quot;&gt;event.conf&lt;/a&gt;&lt;br&gt;3、Logstash Grok Debug Online Tool&lt;br&gt;&lt;a href=&quot;http://grokdebug.herokuapp.com/patterns&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://grokdebug.herokuapp.com/patterns&lt;/a&gt;&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1、收集IIS日志&lt;br&gt;Windows端使用nxlog，配置文件下载查看&lt;a href=&quot;http://www.shiyf.me/wp-content/uploads/2015/12/nxlog.conf_.txt&quot;&gt;nxlog.conf_IIS&lt;/a&gt;&lt;br&gt;2、配置L
+    
+    </summary>
+    
+      <category term="Article" scheme="http://www.shiyf.me/categories/Article/"/>
+    
+      <category term="Tools" scheme="http://www.shiyf.me/categories/Article/Tools/"/>
+    
+    
+  </entry>
+  
+</feed>

@@ -1,0 +1,122 @@
+<!DOCTYPE html><html lang="en"><head><meta http-equiv="content-type" content="text/html; charset=utf-8"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="telephone=no" name="format-detection"><meta name="description" content="I'm fine,thank you."><title>解密微博红包：架构、防刷、监控和资源调度 | FlyFlower</title><link rel="stylesheet" type="text/css" href="/css/style.css?v=0.0.0"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/normalize/4.1.1/normalize.min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/pure-min.css"><link rel="stylesheet" type="text/css" href="//cdn.bootcss.com/pure/0.6.0/grids-responsive-min.css"><link rel="stylesheet" href="//cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css"><script type="text/javascript" src="//cdn.bootcss.com/jquery/2.2.3/jquery.min.js"></script><link rel="Shortcut Icon" type="image/x-icon" href="/favicon.ico"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png"><link rel="alternate" type="application/atom+xml" href="/atom.xml"></head><body><div class="body_container"><div id="header"><div class="site-name"><h1 class="hidden">解密微博红包：架构、防刷、监控和资源调度</h1><a id="logo" href="/.">FlyFlower</a><p class="description">Who Are You?</p></div><div id="nav-menu"><a href="/." class="current"><i class="fa fa-home"> Home</i></a><a href="/archives/"><i class="fa fa-archive"> Archive</i></a><a href="/about/"><i class="fa fa-user"> About</i></a><a href="/timeline/"><i class="fa fa-magic"> TimeLine</i></a><a href="/atom.xml"><i class="fa fa-rss"> RSS</i></a></div></div><div id="layout" class="pure-g"><div class="pure-u-1 pure-u-md-3-4"><div class="content_container"><div class="post"><h1 class="post-title">解密微博红包：架构、防刷、监控和资源调度</h1><div class="post-meta">Mar 4, 2016<span> | </span><span class="category"><a href="/categories/Article/">Article</a></span></div><div class="post-content"><h2 id="编者按"><a href="#编者按" class="headerlink" title="编者按"></a>编者按</h2><p>与传统意义上的红包相比，近两年火起来的“红包”，似乎才是如今春节的一大重头戏。历经上千年时代传承与变迁，春节发红包早已成为历史沉淀的文化习俗，融入了民族的血脉。按照各家公布的数据，除夕全天<strong>微信用户</strong>红包总发送量达到10.1亿次，摇一摇互动量达到110亿次，红包峰值发送量为8.1亿次/分钟。而<strong>支付宝的红包</strong>收发总量达到2.4亿次，参与人数达到6.83亿人次，红包总金额40亿元，峰值为8.83亿次/分钟。春晚直播期间讨论春晚的微博达到5191万条，网友互动量达到1.15亿，网友抢微博红包的总次数超过8亿次。</p>
+<p>为此，InfoQ策划了“春节红包”系列文章，以期为读者剖析各大平台的红包活动背后的技术细节。本文为微博篇。</p>
+<p>随着互联网的发展，打破了以往传统的发红包，带给了红包全新的玩法。微博红包已经成为用户给粉丝拜年的一种途径，土豪版成为土豪刷存在感的方式。每年的红包大战都是用户的现金盛宴，对于整个系统却是残酷的考验。</p>
+<p>微博有8亿注册用户，单日活跃用户数1.34亿的社交平台。红包在微博平台上运行，针对所有的微博用户开放，微博所有用户都可参与红包活动。微博红包有如下特点：</p>
+<ol>
+<li><p>红包价值高、种类多、覆盖用户广，亿级别用户参与。</p>
+</li>
+<li><p>半点准时开抢，高并发访问、瞬间峰值高，每分钟带来上亿次的抢红包峰值。</p>
+</li>
+<li><p>请求快速响应，更新亿级用户中奖状态及红包状态。</p>
+</li>
+<li><p>单个红包数额大。</p>
+</li>
+</ol>
+<p>春晚当天红包总价值超过10亿，有1.34亿用户参与，产生了8亿多次的抢红包行为，其中并发量为平时峰值的10倍左右。在服务器数量一定的情况下，如何构建高并发操作、瞬间峰值高的稳定服务？对于团队和架构师都是一个极大的挑战。这时候系统的架构尤为重要！</p>
+<h2 id="红包架构"><a href="#红包架构" class="headerlink" title="红包架构"></a>红包架构</h2><p>微博红包支持每秒几十万次的操作，应对突发性的热点事件，快速响应，高内聚低耦合的服务成了架构首先要考虑的因素。</p>
+<p>(点击放大图像)</p>
+<p><a href="http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/201.png" target="_blank" rel="external"><img src="http://www.shiyf.me/wp-content/uploads/2016/03/3d2eeb4f9a4c4c96a3ad2248126fa3ed.png" alt=""></a></p>
+<p>微博是社交型应用，红包在用户数据、关系、抢红包等结构上存在着各种各样复杂的依赖，这些依赖相比其它应用来说，调用频率更高，性能要求也更高。</p>
+<p>如上图所示，有多个应用模块接入红包的服务层，服务层由多个节点组成，每个节点对应相应的功能并且相对独立。代码模块的使用和组织上相对独立，保证主功能的快速和稳定，将附属的新功能分离在独立模块中。其中红色虚线框内为核心的功能模块，是重点需要保护的功能。</p>
+<p>微博红包提供获取红包属性（红包金额、红包设置、红包状态、获取抽取结果列表、拆包，抽奖等）接口。服务层调用红包SDK相应的API，会根据应用层逻辑需求提供数据和定制化得数据，完成前端完成交互，达到应用层需要展现的效果。</p>
+<h2 id="防刷策略"><a href="#防刷策略" class="headerlink" title="防刷策略"></a>防刷策略</h2><p>微博红包有别于微信用户发出的红包，微信用户发出的红包是针对自己所认识的朋友或者已存在于微信群的用户；微博红包是针对于微博所有用户的红包，通过分析参与红包的用户数据每年都会产生一些囤积大量账号准备在春晚大发横财的公司和个人。如何防止微博红包被自动注册或者通过转卖账号来领取红包？这成为面对我们需要解决的一大问题。</p>
+<p>(点击放大图像)</p>
+<p><a href="http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/202.png" target="_blank" rel="external"><img src="http://www.shiyf.me/wp-content/uploads/2016/03/52d744ac7dc38fb45403730597f1c497.png" alt=""></a></p>
+<p>微博通过基于用户在微博上的行为分析，通过登录，发微博，身份验证等方面来进行分析。主要有：</p>
+<ol>
+<li><p>用户注册：通过用户行为分析来识别机器注册的用户，则注册环节进行拦截。</p>
+</li>
+<li><p>用户登录：分析用户登录的行为，通过验证码，身份验证以及手机号验证等措施来提高机器自动登录的门槛。</p>
+</li>
+<li><p>账号质量：通过实名认证，微博的动态等方面来计算出用户的质量。</p>
+</li>
+<li><p>参与红包：红包战场一贯是刷奖账号的获利主战场， 通过用户平时在微博的行为、属性以及实时的登录状态和常用设备来进行分析，判断是否是正常账号来确定是否可以中奖。</p>
+</li>
+</ol>
+<h2 id="完善的监控"><a href="#完善的监控" class="headerlink" title="完善的监控"></a>完善的监控</h2><p>红包系统是一个大而规则复杂的系统，系统越大，依赖的资源越多，也就越容易出现各种各样的问题。为了给提供稳定运行的服务，必须要能时刻知晓各个资源当前的运行状态。并且在系统出现异常之前或者出现异常的时候，对问题进行排查和定位。</p>
+<p>(点击放大图像)</p>
+<p><img src="http://www.shiyf.me/wp-content/uploads/2016/03/5d4780108098808bb060e3af6c883700.png" alt=""></p>
+<p><a href="http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/205.png" target="_blank" rel="external"><img src="http://www.shiyf.me/wp-content/uploads/2016/03/ffbb3a6165e5083b5bc6755a7a9867ed.png" alt=""></a></p>
+<p><a href="http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/204.png" target="_blank" rel="external"><img src="http://www.shiyf.me/wp-content/uploads/2016/03/8d371987f5ecb7fbf0629f9d302d16fe.png" alt=""></a></p>
+<p><a href="http://cdn.infoqstatic.com/statics_s1_20160301-0105u1/resource/articles/2016-hongbao-weibo/zh/resources/206.png" target="_blank" rel="external"><img src="http://www.shiyf.me/wp-content/uploads/2016/03/099a746cbf4d7e9e80d98a0adbce2327.png" alt=""></a></p>
+<p>如上图所示，完善的监控系统，为微博红包顺利度过春晚提供了很好的保障。主要涉及的监控如下：</p>
+<p>1、应用层接口响应时间监控</p>
+<p>通过实时的分析access log日志，以HTTP code和响应时间维度实时统计出接口的状态和性能，根据占比来查看接口的健康程度。</p>
+<p>2、服务层各模块性能监控</p>
+<p>在模块中记录开始时间和结束时间，每次处理完计算出模块的耗时，通过这种方式很好的发现各个模块是否正常。    </p>
+<p>3、网络层监控</p>
+<p>微博红包的出口网络是一个单独的app池，出口带宽使用到80%的时候网络稳定性就可能受到影响。通过计算后端服务器输出计算出带宽，以便能够做到及时响应扩容。</p>
+<p>4、资源层的监控</p>
+<p>对各种资源的监控，比如Redis、MySQL、MC等资源的连接时间、状态和操作的实时统计分析，快速定位是否存在资源瓶颈。</p>
+<p>5、服务器的性能监控</p>
+<p>通过运维监控系统，对服务器的CPU、内存使用情况，做到了能够观察每台服务器具体的运行情况。</p>
+<p>6、系统错误日志的监控</p>
+<p>系统错误监控包括服务器负载，服务进程状态，资源连接，网络连接出现的问题，实时通过手机，邮件和私信知道。为快速响应创造了条件。</p>
+<h2 id="弹性资源管理和调度"><a href="#弹性资源管理和调度" class="headerlink" title="弹性资源管理和调度"></a>弹性资源管理和调度</h2><p>1、故障的秒级切换</p>
+<p>微博红包服务部署在了三个机房（包括云服务），任何一个机房如果出现网络或者其它不可预测的问题可以在几秒钟之内将服务切换到其它机房。</p>
+<p>2、资源的相互独立</p>
+<p>资源的相互独立，让资源的可扩展性变得容易。而且使得各个服务之间交叉影响达到了最小。</p>
+<p>3、引入阿里云做为第三机房，使用Docker快速部署服务</p>
+<p>红包的核心服务主要分布在 2 个机房，两者互相做为灾难备份用途，为应对超预期的峰值，引入阿里云做为第三机房。使用定制化的红包Docker快速部署服务来实现弹性调度架构。通过Docker自动化操作大规模集群，进行弹性调度资源的任务，实现快速部署服务来应付超预期的峰值。</p>
+<h2 id="系统的挑战和性能优化"><a href="#系统的挑战和性能优化" class="headerlink" title="系统的挑战和性能优化"></a>系统的挑战和性能优化</h2><p>为了保证用户体验，微博红包需要解决以下几个问题：</p>
+<ol>
+<li><p>系统性能的可靠性</p>
+</li>
+<li><p>关键节点的可用性</p>
+</li>
+<li><p>如何应对突发热点</p>
+</li>
+<li><p>业务频繁迭代的处理</p>
+</li>
+</ol>
+<p>1、系统架构的升级</p>
+<p>模块的独立化，避免出现模块间的相互影响。</p>
+<p>nginx+lua的使用，使得服务器的QPS有了数量级的提升，同时服务器集群做到了秒级重启。</p>
+<p>2、修枝剪页</p>
+<p>减少对于系统外部的依赖，梳理完整的调用关系图。非核心功能使用异步调用，合并相关的调用，去掉重复的调用。保证核心调用逻辑，避免非核心业务影响核心业务。</p>
+<p>3、多级缓存</p>
+<p>服务端本地缓存，使用nginx本身缓存和服务器的L0缓存，来提升模块的响应速度，做到了90%以上核心接口的响应时间在50ms以内，减少了进程等待时间，提升了服务器的处理速度。</p>
+<p>一年一度的各大平台抢红包还会延续下去，这是一个斗智斗勇的过程，在服务器有限的情况下每一次与峰值的对抗都是对技术一次极大的挑战，每次挑战都是带来技术上的成长和收获。</p>
+<p>感谢<a href="http://www.infoq.com/cn/author/%E9%83%AD%E8%95%BE" target="_blank" rel="external">郭蕾</a>对本文的策划和审校。</p>
+<p>给InfoQ中文站投稿或者参与内容翻译工作，请邮件至<a href="#">editors@cn.infoq.com</a>。也欢迎大家通过新浪微博（<a href="http://www.weibo.com/infoqchina" target="_blank" rel="external">@InfoQ</a>，<a href="http://weibo.com/u/1451714913" target="_blank" rel="external">@丁晓昀</a>），微信（微信号：<a href="http://weixin.sogou.com/gzh?openid=oIWsFt0HnZ93MfLi3pW2ggVJFRxY" target="_blank" rel="external">InfoQChina</a>）关注我们。</p>
+<pre><code>**【[QCon北京2016](http://2016.qconbeijing.com/?utm_source=article&amp;amp;utm_medium=infoq&amp;amp;utm_campaign=textads)】《七周七并发模型》作者Paul Butcher、Dojo Toolkit联合发起人Dylan Schiemann、高盛技术部VP林文、峰瑞资本技术合伙人覃超、LinkedIn Java性能优化专家庄振运、Rust贡献者庄晓立等专家将聚首QCon，分享最佳技术实践，[更多精彩](http://2016.qconbeijing.com/speakers?utm_source=article&amp;amp;utm_medium=infoq&amp;amp;utm_campaign=textads)。现在[购票](http://2016.qconbeijing.com/apply?utm_source=article&amp;amp;utm_medium=infoq&amp;amp;utm_campaign=textads)立减680，5人之上团购优惠多多。**
+</code></pre><ul>
+<li><a href="http://www.infoq.com/cn/articles/null" target="_blank" rel="external"><span>领域</span></a></li>
+<li><a href="http://www.infoq.com/cn/architecture-design" target="_blank" rel="external"><strong>架构 &amp; 设计</strong></a></li>
+<li><a href="http://www.infoq.com/cn/development" target="_blank" rel="external"><strong>语言 &amp; 开发</strong></a></li>
+<li><a href="http://www.infoq.com/cn/articles/null" target="_blank" rel="external"><span>专栏</span></a></li>
+<li><a href="http://www.infoq.com/cn/weibo" target="_blank" rel="external">微博</a></li>
+<li><a href="http://www.infoq.com/cn/gaobing" target="_blank" rel="external">高并发</a></li>
+<li><a href="http://www.infoq.com/cn/cloud-service" target="_blank" rel="external">云服务</a></li>
+<li><a href="http://www.infoq.com/cn/operation" target="_blank" rel="external">运维</a></li>
+<li><a href="http://www.infoq.com/cn/Hongbao" target="_blank" rel="external">春节红包</a>                            </li>
+</ul>
+<p>相关内容</p>
+<p>###<br>                                    <a href="http://www.infoq.com/cn/articles/large-scale-docker-cluster-practise-experience-share?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">微博红包：大规模Docker集群实践经验分享</a></p>
+<p>###<br>                                    <a href="http://www.infoq.com/cn/interviews/interview-with-liqingfeng-talk-sina-weibo-service?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">李庆丰：新浪微博服务高可用新技术、新架构的尝试</a></p>
+<p>###<br>                                    <a href="http://www.infoq.com/cn/articles/evolution-of-micro-blog-recommendation?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">微博推荐架构的演进</a></p>
+<p>###<br>                                    <a href="http://www.infoq.com/cn/articles/the-algorithm-behind-weibo?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">微博背后的那些算法</a></p>
+<p>###<br>                                    <a href="http://www.infoq.com/cn/presentations/typical-problems-of-weibo-in-large-scale-high-load-system?utm_source=infoq&amp;utm_medium=related_content_link&amp;utm_campaign=relatedContent_articles_clk" target="_blank" rel="external">微博在大规模、高负载系统中的典型问题</a></p>
+<p>相关厂商内容</p>
+<p>###<br>                                    <a href="http://www.infoq.com/infoq/url.action?i=9312&amp;t=f" target="_blank" rel="external"><br>                                        网易视频云的数据传输架构
+                                    </a></p>
+<p>###<br>                                    <a href="http://www.infoq.com/infoq/url.action?i=9313&amp;t=f" target="_blank" rel="external"><br>                                        大数据和人工智能在P2P金融的应用
+                                    </a></p>
+<p>###<br>                                    <a href="http://www.infoq.com/infoq/url.action?i=9314&amp;t=f" target="_blank" rel="external"><br>                                        知名互联网公司管理方法之Facebook
+                                    </a></p>
+<p>相关赞助商</p>
+<pre><code>[
+
+](http://www.infoq.com/infoq/url.action?i=8994&amp;amp;t=f)
+</code></pre><p><span>QCon北京2016大会，4月21-23日，北京·国际会议中心，<a href="http://www.infoq.com/infoq/url.action?i=8993&amp;t=f" target="_blank" rel="external">精彩内容</a>邀您参与！</span></p>
+<pre><code>[
+</code></pre><h3 id="告诉我们您的想法"><a href="#告诉我们您的想法" class="headerlink" title="告诉我们您的想法"></a>告诉我们您的想法</h3><pre><code>社区评论 
+        &lt;span&gt;
+            &lt;a href=&quot;#&quot;&gt;Watch Thread](http://www.infoq.com/cn/articles/null)
+        &lt;/span&gt;
+</code></pre></div><script type="text/javascript" src="/js/share.js?v=0.0.0" async></script><a data-url="http://www.shiyf.me/2016/03/04/e8-a7-a3-e5-af-86-e5-be-ae-e5-8d-9a-e7-ba-a2-e5-8c-85-ef-bc-9a-e6-9e-b6-e6-9e-84-e3-80-81-e9-98-b2-e5-88-b7-e3-80-81-e7-9b-91-e6-8e-a7-e5-92-8c-e8-b5-84-e6-ba-90-e8-b0-83-e5-ba-a6/" data-id="cipf2qsa4000ocxs6docnewgn" class="article-share-link">Share</a><div class="tags"><a href="/tags/架构-Posts-微博-红包-资源调度-监控/">架构,Posts,微博,红包,资源调度,监控</a></div><div class="post-nav"><a href="/2016/03/16/e4-ba-ba-e7-94-9f-e6-84-9f-e6-82-9f/" class="pre">人生感悟</a><a href="/2016/02/28/e7-83-a6-e6-81-bc/" class="next">烦恼</a></div></div></div></div><div class="pure-u-1-4"><div id="sidebar"><div class="widget"><form action="//www.google.com/search" method="get" accept-charset="utf-8" target="_blank" class="search-form"><input type="text" name="q" maxlength="20" placeholder="Search"/><input type="hidden" name="sitesearch" value="http://www.shiyf.me"/></form></div><div class="widget"><div class="widget-title"><i class="fa fa-folder-o"> Categories</i></div><ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Article/">Article</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Article/Security/">Security</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Article/Security/Tools/">Tools</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Article/Tools/">Tools</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/Music/">Music</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/Tools/">Tools</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-star-o"> Tags</i></div><div class="tagcloud"><a href="/tags/架构-Posts-微博-红包-资源调度-监控/" style="font-size: 15px;">架构,Posts,微博,红包,资源调度,监控</a> <a href="/tags/NoLikesNeeded/" style="font-size: 15px;">#NoLikesNeeded</a> <a href="/tags/cell-phone/" style="font-size: 15px;">cell phone</a> <a href="/tags/cell-phones/" style="font-size: 15px;">cell phones</a> <a href="/tags/selfie/" style="font-size: 15px;">selfie</a> <a href="/tags/selfie-stick/" style="font-size: 15px;">selfie stick</a> <a href="/tags/selfies/" style="font-size: 15px;">selfies</a> <a href="/tags/technology/" style="font-size: 15px;">technology</a> <a href="/tags/碎碎念/" style="font-size: 15px;">碎碎念</a> <a href="/tags/感想/" style="font-size: 15px;">感想</a></div></div><div class="widget"><div class="widget-title"><i class="fa fa-file-o"> Recent</i></div><ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/06/14/hello-world/">Hello World</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/学习/">学习</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/情说/">情说</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/06/04/状态/">心痛的记忆</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/23/e6-ae-b5-e5-ad-90/">段子</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/17/e6-97-a0-e9-a2-98/">无题</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/16/e4-ba-ba-e7-94-9f-e6-84-9f-e6-82-9f/">人生感悟</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/03/04/e8-a7-a3-e5-af-86-e5-be-ae-e5-8d-9a-e7-ba-a2-e5-8c-85-ef-bc-9a-e6-9e-b6-e6-9e-84-e3-80-81-e9-98-b2-e5-88-b7-e3-80-81-e7-9b-91-e6-8e-a7-e5-92-8c-e8-b5-84-e6-ba-90-e8-b0-83-e5-ba-a6/">解密微博红包：架构、防刷、监控和资源调度</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/28/e7-83-a6-e6-81-bc/">烦恼</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/02/12/e6-97-a0-e6-84-9f/">无感</a></li></ul></div><div class="widget"><div class="widget-title"><i class="fa fa-external-link"> Blogroll</i></div><ul></ul><a href="http://www.wooyun.org/" title="WooYun" target="_blank">WooYun</a><ul></ul><a href="http://music.163.com/#/user/home?id=7397509" title="NetEase Music" target="_blank">NetEase Music</a></div></div></div><div class="pure-u-1 pure-u-md-3-4"><div id="footer">© <a href="/." rel="nofollow">FlyFlower.</a> Powered by<a rel="nofollow" target="_blank" href="https://hexo.io"> Hexo.</a><a rel="nofollow" target="_blank" href="https://github.com/tufu9441/maupassant-hexo"> Theme</a> by<a rel="nofollow" target="_blank" href="https://github.com/pagecho"> Cho.</a></div></div></div><a id="rocket" href="#top" class="show"></a><script type="text/javascript" src="/js/totop.js?v=0.0.0" async></script><script type="text/javascript" src="//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js" async></script><script type="text/javascript" src="/js/fancybox.js?v=0.0.0" async></script><link rel="stylesheet" type="text/css" href="/css/jquery.fancybox.css?v=0.0.0"><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+ga('create','UA-78714913-1','auto');ga('send','pageview');
+</script><script type="text/javascript" src="/js/codeblock-resizer.js?v=0.0.0"></script><script type="text/javascript" src="/js/smartresize.js?v=0.0.0"></script></div></body></html>
